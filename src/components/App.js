@@ -4,15 +4,27 @@ import Order from './Order';
 import Inventory from './Inventory';
 
 class App extends React.Component {
-  state={tagline: "Fresh Daily "}
+  state={
+    fishes: {},
+    order: {}
+  };
+
+  addFish = (fish) => {
+    const fishes = {...this.state.fishes} // copy of the existing state
+    fishes[`fish${Date.now()}`] = fish;
+    this.setState({ fishes: fishes })
+  }
+
+
+
   render() {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
-          <Header TagLine={this.state.tagline}/>
+          <Header TagLine={"Fresh Daily"}/>
         </div>
          <Order />
-         <Inventory />
+         <Inventory addFish={this.addFish}/>
       </div>
     )
   }

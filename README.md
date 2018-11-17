@@ -1,3 +1,23 @@
+## Catch Of The Day.
+
+This app is part of the course by [Wes Bos](www.wesbos.com).
+
+The idea behind taking this course was to really take my javaScript skills to a whole new level and ofcourse to learn react.
+
+Highlighting what I learnt from this course:
+* How create-react-app works.
+* understanding React component.
+* Understanding JSX.
+* Props & State.
+* Typechecking with prop-types.
+* realtime web socket data with firebase.
+* Routing with react router.
+* Authentication with firebase.
+* Deploying to various providers.
+
+Here is the [Live App](https://5beff92f02ed837feaac2182--nifty-saha-da57d1.netlify.com).
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

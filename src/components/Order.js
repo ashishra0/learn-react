@@ -1,11 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {formatPrice} from '../helpers';
 
 class Order extends React.Component {
+  static propTypes = {
+    fishes: PropTypes.shape({
+      fish: PropTypes.shape({
+        name: PropTypes.number,
+        image: PropTypes.string,
+        desc: PropTypes.string,
+        status: PropTypes.string,
+        price: PropTypes.number
+      })
+    }),
+    order: PropTypes.shape({
+      fish: PropTypes.number
+    })
+  }
+
   renderOrder = (key) => {
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
-    const isAvailable = fish.status === 'available'
+    const isAvailable = fish && fish.status === 'available'
+    if(!fish) return null;
     if(!isAvailable) {
       return (
         <li>Sorry {fish? fish.name : 'fish'} Is Not Available!</li>
@@ -15,6 +32,7 @@ class Order extends React.Component {
       <li key={key}>
         {count} lbs {fish.name}
         {formatPrice(count * fish.price)}
+        <button onClick={() => this.props.deleteOrder(key)}>&times;</button>
       </li>
     );
   }

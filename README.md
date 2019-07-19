@@ -1,7 +1,5 @@
 ## Catch Of The Day.
 
-This app is part of the course by [Wes Bos](www.wesbos.com).
-
 The idea behind taking this course was to really take my javaScript skills to a whole new level and ofcourse to learn react.
 
 Highlighting what I learnt from this course:
